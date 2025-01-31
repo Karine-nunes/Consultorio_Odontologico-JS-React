@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaUser, FaLock } from 'react-icons/fa';
+import InputMask from 'react-input-mask';
+import { cpf as cpfValidator } from 'cpf-cnpj-validator';
 import loginImage from '../assets/imagens/dentist.png'; // Imagem principal na tela de login
-import InputMask from 'react-input-mask'; // Para aplicar a máscara no CPF
-import { cpf as cpfValidator } from 'cpf-cnpj-validator'; // Para validar o CPF
-import { FaUser, FaLock } from 'react-icons/fa'; // Import dos ícones
 
 function Login() {
   const [cpf, setCpf] = useState('');
@@ -20,7 +20,7 @@ function Login() {
     // Lógica de autenticação
     if (cpf === '707.515.350-10' && senha === '1234') {
       alert('Login realizado com sucesso!');
-      navigate('/dashboard'); // Redireciona para a página inicial após o login
+      navigate('/menu'); // Redireciona para a tela de Menu
     } else {
       alert('CPF ou senha incorretos.');
     }

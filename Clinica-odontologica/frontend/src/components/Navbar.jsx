@@ -22,19 +22,10 @@ const Navbar = () => {
         <ul className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
           <li className="nav-item">
             <Link to="/" className="nav-link" onClick={toggleMobileMenu}>
-              <FaHome className="nav-icon" /> Login
+              <FaHome className="nav-icon" /> Logout
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/funcionarios" className="nav-link" onClick={toggleMobileMenu}>
-              <FaUsers className="nav-icon" /> Funcionários
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/pacientes" className="nav-link" onClick={toggleMobileMenu}>
-              <FaUserInjured className="nav-icon" /> Pacientes
-            </Link>
-          </li>
+          
         </ul>
 
         {/* Ícone do menu mobile */}
