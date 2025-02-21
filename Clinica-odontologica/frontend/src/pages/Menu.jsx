@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUser, FaFileMedical } from 'react-icons/fa'; // Ícones importados
 
 function Menu() {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Menu Principal</h1>
       <div style={styles.buttonContainer}>
-        <Link to="/funcionarios" style={styles.button}>
-          Funcionários
+        <Link to="/usuarios" style={styles.button}>
+          <FaUser style={styles.icon} /> {/* Ícone de usuário */}
+          <span style={styles.buttonText}>Usuário</span>
         </Link>
         <Link to="/pacientes" style={styles.button}>
-          Pacientes
+          <FaFileMedical style={styles.icon} /> {/* Ícone de prontuário */}
+          <span style={styles.buttonText}>Área do Paciente</span>
         </Link>
       </div>
     </div>
@@ -23,31 +26,46 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f4f4f4',
+    height: '85vh',
+    backgroundColor: '#f0f2f5',
+    padding: '20px',
   },
   title: {
-    fontSize: '24px',
-    marginBottom: '20px',
+    fontSize: '32px',
+    marginBottom: '40px',
     color: '#333',
+    fontWeight: 'bold',
   },
   buttonContainer: {
     display: 'flex',
-    flexDirection: 'column',
-    gap: '10px',
+    flexDirection: 'row',
+    gap: '20px',
+    width: '100%',
+    maxWidth: '600px',
+    justifyContent: 'center',
   },
   button: {
-    padding: '10px 20px',
-    backgroundColor: '#0d47a1',
-    color: '#fff',
+    padding: '20px',
+    backgroundColor: '#ffffff',
+    color: '#333',
     textDecoration: 'none',
-    borderRadius: '4px',
+    borderRadius: '12px',
     textAlign: 'center',
-    fontSize: '16px',
-    transition: 'background-color 0.3s ease',
+    fontSize: '18px',
+    transition: 'background-color 0.3s ease, transform 0.2s ease',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '15px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    flex: 1,
+    maxWidth: '250px',
   },
-  buttonHover: {
-    backgroundColor: '#1565c0', // Cor ao passar o mouse
+  icon: {
+    fontSize: '24px',
+    color: '#47a6ea',
+  },
+  buttonText: {
+    flex: 1,
   },
 };
 

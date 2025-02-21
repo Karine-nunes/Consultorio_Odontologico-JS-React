@@ -1,0 +1,127 @@
+/* Estilo para o container principal */
+.user-monitor-container {
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título da página */
+.page-title {
+  font-size: 20px;
+  font-weight: italic;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+}
+
+
+/* Estilo para o container dos filtros */
+.filter-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: first baseline;
+}
+
+/* Estilo para os campos de filtro */
+.filter-input {
+  width: 200px;
+
+}
+/* Estilo para os campos de filtro */
+.filter-input .MuiOutlinedInput-root {
+  height: 40px; /* Ajuste a altura dos inputs */
+}
+
+.filter-input .MuiInputLabel-root {
+  transform: translate(14px, 12px) scale(1); /* Ajuste a posição do label */
+}
+
+.filter-input .MuiInputLabel-root.Mui-focused {
+  transform: translate(14px, -6px) scale(0.75); /* Ajuste a posição do label quando focado */
+}
+
+/* Estilo para o botão de filtrar */
+.filter-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background-color: #115293;
+}
+
+/* Estilo para o botão de novo cadastro */
+.new-user-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  position: absolute;
+  top: -45px;
+  left: 1740px; 
+}
+
+.new-user-button:hover {
+  background-color: #499ef3;
+}
+
+/* Estilo para a tabela */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  
+}
+
+.user-table th{
+  padding: 14px;
+  text-align: left;
+  border-bottom: 2px solid #5492ef;/*#25557d;*/
+  font-size: 15px;
+}
+.user-table td {
+  padding: 6px;
+  text-align: left;
+  border-bottom: 2px solid #dad9d9;
+  font-size: 13px;
+  font: bolder;
+}
+
+.user-table th {
+  background-color: #5492ef; /* Tom mais escuro para o cabeçalho */
+  color: rgb(246, 242, 242);
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Linhas pares em tom mais claro */
+}
+
+.user-table tr:nth-child(odd) {
+  background-color: #efeff0; /* Linhas ímpares em tom mais escuro */
+}
+
+.user-table tr:hover {
+  background-color: #d4d8da; /* Efeito hover */
+}
+
+/* Estilo para o botão de edição */
+.edit-button {
+  color: #1584f2;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  color: #115293;
+}

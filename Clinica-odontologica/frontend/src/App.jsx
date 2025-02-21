@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Funcionarios from './pages/Funcionarios';
 import Pacientes from './pages/Pacientes';
 import Login from './pages/Login';
 import Menu from './pages/Menu';
 import Navbar from './components/Navbar';
+import Usuario from './components/UsuarioMonitor/UserMonitor';
+import UserMonitor from './components/UsuarioMonitor/UserMonitor';
 
 const App = () => {
   const location = useLocation(); // Obtém a rota atual
@@ -17,7 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} /> {/* Rota padrão */}
         <Route path="/menu" element={<Menu />} /> {/* Tela de Menu */}
-        <Route path="/funcionarios" element={<Funcionarios />} />
+        <Route path="usuarios" element={<UserMonitor />} />
         <Route path="/pacientes" element={<Pacientes />} />
         <Route path="/login" element={<Login />} />
       </Routes>

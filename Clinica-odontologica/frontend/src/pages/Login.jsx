@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
 import InputMask from 'react-input-mask';
 import { cpf as cpfValidator } from 'cpf-cnpj-validator';
-import loginImage from '../assets/imagens/dentist.png'; // Imagem principal na tela de login
+import loginImage from '../assets/imagens/LogoM.png'; // Imagem principal na tela de login
 
 function Login() {
   const [cpf, setCpf] = useState('');
@@ -39,7 +39,7 @@ function Login() {
 
       {/* Área do formulário */}
       <div style={styles.formContainer}>
-        <h1 style={styles.title}>Bem-vindo ao Sistema Dentístico</h1>
+        <h1 style={styles.title} >Bem-vindo ao Sistema Dentístico</h1>
         
         {/* Campo CPF */}
         <div style={styles.inputContainer}>
@@ -91,7 +91,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#bbdefb',
+    backgroundColor: '#ffffff',
   },
   image: {
     maxWidth: '90%',
@@ -109,9 +109,10 @@ const styles = {
   },
   title: {
     fontSize: '24px',
-    color: '#333',
+    color: '#000000',
     marginBottom: '20px',
     textAlign: 'center',
+   
   },
   inputContainer: {
     display: 'flex',
@@ -134,9 +135,9 @@ const styles = {
     backgroundColor: '#fafafa',
   },
   button: {
-    width: '250px',
+    width: '270px',
     padding: '10px',
-    backgroundColor: '#0d47a1',
+    backgroundColor: '#259df0',
     color: '#fafafa',
     border: 'none',
     borderRadius: '4px',
