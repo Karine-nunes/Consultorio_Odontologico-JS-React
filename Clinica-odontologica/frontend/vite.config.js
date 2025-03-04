@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: 'frontend/index.html', // Caminho para o index.html
+        main: 'Clinica-odontologica\frontend\index.html', // Caminho para o index.html
       },
     },
   },
