@@ -3,7 +3,12 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000, // Defina a porta que deseja usar
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: './public/index.html', // Caminho para o index.html
+      },
+    },
   },
-})
+});
