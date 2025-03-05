@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: './index.html', // Caminho para o index.html
-      },
-    },
+    //rollupOptions: {
+      //input: {
+        //main: './index.html', // Caminho para o index.html
+      //},
+ //   },
   },
 });
