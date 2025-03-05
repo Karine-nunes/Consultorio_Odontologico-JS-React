@@ -1,0 +1,13 @@
+{
+    "build": {
+      "env": {
+        "VITE_API_URL": "https://api.exemplo.com"
+      }
+    },
+    "routes": [
+      {
+        "src": "/.*",
+        "dest": "/index.html"
+      }
+    ]
+  }
