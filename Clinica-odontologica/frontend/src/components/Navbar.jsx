@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo ou título */}
+        {/* Logo ou título.......... */}
         <Link to="/" className="navbar-logo">
           <FaHome className="navbar-icon" /> Clínica Odontológica
         </Link>
