@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField, Button, IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom'; // Importe o useNavigate
 import './MonitorUser.css';
 
 const UserMonitor = () => {
@@ -8,31 +9,20 @@ const UserMonitor = () => {
     { id: 1, nome: 'Igor', cpf: '55486441053', email: 'user@apartamento.com', tipoAcesso: 'ADMIN' },
     { id: 2, nome: 'Karine', cpf: '8817050813', email: 'user2@apartamento.com', tipoAcesso: 'FUNCIONARIO' },
     { id: 3, nome: 'Marcos', cpf: '72827846992', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Usuario', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Teste', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Daniela', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Larissa', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Kellen', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Lucas', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'User', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Cereal', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Dentist', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'João', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
-    { id: 3, nome: 'Maria', cpf: '72827846993', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
     // Adicione mais usuários conforme necessário
   ]);
 
   const [filterNome, setFilterNome] = useState('');
   const [filterCpf, setFilterCpf] = useState('');
+  const navigate = useNavigate(); // Hook para navegação
 
   const handleEdit = (id) => {
     console.log('Editar usuário com ID:', id);
-    // Implemente a lógica de edição aqui
+    navigate('/cadastro-usuario'); // Redireciona para a tela de cadastro de usuário
   };
 
   const handleNewUser = () => {
-    console.log('Novo cadastro');
-    // Implemente a lógica de novo cadastro aqui
+    navigate('/cadastro-usuario'); // Redireciona para a tela de cadastro de usuário
   };
 
   const handleFilter = () => {
@@ -47,10 +37,10 @@ const UserMonitor = () => {
 
   return (
     <Paper className="user-monitor-container">
-      <h1 className="page-title">Monitor de Usuários</h1> {/* Título da página */}
+      <h1 className="page-title">Monitor de Usuários</h1>
 
       <Button variant="contained" className="new-user-button" onClick={handleNewUser}>
-        Novo 
+        Novo
       </Button>
 
       <div className="filter-container">
@@ -60,7 +50,7 @@ const UserMonitor = () => {
           value={filterNome}
           onChange={(e) => setFilterNome(e.target.value)}
           className="filter-input"
-          size="small" /* Torna o campo de filtro menor */
+          size="small"
         />
         <TextField
           label="Filtrar por CPF"
@@ -68,7 +58,7 @@ const UserMonitor = () => {
           value={filterCpf}
           onChange={(e) => setFilterCpf(e.target.value)}
           className="filter-input"
-          size="small" /* Torna o campo de filtro menor */
+          size="small"
         />
         <Button variant="contained" className="filter-button" onClick={handleFilter}>
           Filtrar

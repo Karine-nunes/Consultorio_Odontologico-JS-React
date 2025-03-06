@@ -1,0 +1,83 @@
+.cadastro-container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.cadastro-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cadastro-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-container label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.cadastro-container input[type="text"],
+.cadastro-container input[type="email"],
+.cadastro-container select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.cadastro-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.cadastro-container .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.cadastro-container .checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.cadastro-container .button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cadastro-container .button-group button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cadastro-container .button-group button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+}
+
+.cadastro-container .button-group button[type="submit"] {
+    background-color: #1976d2;
+    color: white;
+}
+
+.cadastro-container .button-group button:hover {
+    opacity: 0.9;
+}

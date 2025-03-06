@@ -39,7 +39,7 @@ function Login() {
 
       {/* Área do formulário */}
       <div style={styles.formContainer}>
-        <h1 style={styles.title} >Bem-vindo ao Sistema Dentístico</h1>
+        <h1 style={styles.title} color='#333' >Bem-vindo ao Sistema Dentístico</h1>
         
         {/* Campo CPF */}
         <div style={styles.inputContainer}>

@@ -6,6 +6,7 @@ import Menu from './pages/Menu';
 import Navbar from './components/Navbar';
 import Usuario from './components/UsuarioMonitor/UserMonitor';
 import UserMonitor from './components/UsuarioMonitor/UserMonitor';
+import UserForm from './components/UsuarioMonitor/UserForm';
 
 const App = () => {
   const location = useLocation(); // Obtém a rota atual
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="usuarios" element={<UserMonitor />} />
         <Route path="/pacientes" element={<Pacientes />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cadastro-usuario" element={<UserForm />} />
       </Routes>
     </>
   );
