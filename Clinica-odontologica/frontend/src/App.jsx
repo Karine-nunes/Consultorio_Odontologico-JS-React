@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { UserProvider } from './context/UserContext'; // Importe o UserProvider
 import Pacientes from './pages/Pacientes';
 import Login from './pages/Login';
 import Menu from './pages/Menu';
@@ -31,9 +32,11 @@ const App = () => {
 // Envolva o App com o Router
 export default function AppWrapper() {
   return (
-    <Router>
-      <App />
-    </Router>
+    <UserProvider> {/* Envolve toda a aplicação com o UserProvider */}
+      <Router> {/* Envolve a aplicação com o Router */}
+        <App /> {/* Renderiza o App dentro do Router */}
+      </Router>
+    </UserProvider>
   );
 };
 

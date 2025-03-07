@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'; // Adicione o useContext aqui
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
 import InputMask from 'react-input-mask';
 import { cpf as cpfValidator } from 'cpf-cnpj-validator';
 import loginImage from '../assets/imagens/LogoM.png'; // Imagem principal na tela de login
+import { UserContext } from '../context/UserContext'; // Corrija o ponto e vírgula duplicado
 
 function Login() {
   const [cpf, setCpf] = useState('');
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
+  const { authenticateUser } = useContext(UserContext); // Use o contexto
 
   const handleLogin = () => {
     // Verifica se o CPF é válido
@@ -17,9 +19,10 @@ function Login() {
       return;
     }
 
-    // Lógica de autenticação
-    if (cpf === '707.515.350-10' && senha === '1234') {
-      alert('Login realizado com sucesso!');
+    // Autentica o usuário usando o contexto
+    const user = authenticateUser(cpf, senha);
+    if (user) {
+      alert(`Login realizado com sucesso! Bem-vindo, ${user.nome}.`);
       navigate('/menu'); // Redireciona para a tela de Menu
     } else {
       alert('CPF ou senha incorretos.');
@@ -39,8 +42,8 @@ function Login() {
 
       {/* Área do formulário */}
       <div style={styles.formContainer}>
-        <h1 style={styles.title} color='#333' >Bem-vindo ao Sistema Dentístico</h1>
-        
+        <h1 style={styles.title}>Bem-vindo ao Sistema Dentístico</h1>
+
         {/* Campo CPF */}
         <div style={styles.inputContainer}>
           <FaUser style={styles.icon} />
@@ -52,7 +55,7 @@ function Login() {
             style={styles.input}
           />
         </div>
-        
+
         {/* Campo Senha */}
         <div style={styles.inputContainer}>
           <FaLock style={styles.icon} />

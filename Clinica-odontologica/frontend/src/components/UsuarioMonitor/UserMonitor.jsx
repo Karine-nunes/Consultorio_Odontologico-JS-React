@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField, Button, IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router-dom'; // Importe o useNavigate
+import { UserContext } from "../../context/UserContext"; // Importe o UserContext
 import './MonitorUser.css';
 
 const UserMonitor = () => {
-  const [users, setUsers] = useState([
+  const { users, addUser, editUser } = useContext(UserContext); // Use o contexto
+  const [localUsers, setLocalUsers] = useState([
     { id: 1, nome: 'Igor', cpf: '55486441053', email: 'user@apartamento.com', tipoAcesso: 'ADMIN' },
     { id: 2, nome: 'Karine', cpf: '8817050813', email: 'user2@apartamento.com', tipoAcesso: 'FUNCIONARIO' },
     { id: 3, nome: 'Marcos', cpf: '72827846992', email: 'user3@mailbox.com', tipoAcesso: 'MEDICO' },
@@ -30,7 +32,7 @@ const UserMonitor = () => {
     console.log('Filtrar');
   };
 
-  const filteredUsers = users.filter(user =>
+  const filteredUsers = localUsers.filter(user =>
     user.nome.toLowerCase().includes(filterNome.toLowerCase()) &&
     user.cpf.includes(filterCpf)
   );
