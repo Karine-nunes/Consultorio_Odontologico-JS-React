@@ -1,7 +1,14 @@
-import React, { useState } from "react";
-import "./UserForm.css"; // Importando o arquivo CSS
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { UserContext } from "../../context/UserContext"; // Importe o UserContext
+import "./UserForm.css";
 
 const CadastroUsuario = () => {
+  const { addUser, editUser } = useContext(UserContext); // Use o contexto
+  const location = useLocation();
+  const userToEdit = location.state?.user; // Dados do usuário para edição
+  const navigate = useNavigate();
+
   const [usuario, setUsuario] = useState({
     nome: "",
     cpf: "",
@@ -13,6 +20,24 @@ const CadastroUsuario = () => {
     tiposAcesso: [],
     usuarioAtivo: false,
   });
+
+  // Preenche o formulário com os dados do usuário, se for edição
+  useEffect(() => {
+    if (userToEdit) {
+      console.log("Preenchendo formulário com:", userToEdit); // Depuração
+      setUsuario({
+        nome: userToEdit.nome,
+        cpf: userToEdit.cpf,
+        telefone: userToEdit.telefone || "",
+        email: userToEdit.email,
+        endereco: userToEdit.endereco || "",
+        bairro: userToEdit.bairro || "",
+        cidade: userToEdit.cidade || "",
+        tiposAcesso: userToEdit.tiposAcesso || [],
+        usuarioAtivo: userToEdit.usuarioAtivo || false,
+      });
+    }
+  }, [userToEdit]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -39,11 +64,15 @@ const CadastroUsuario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Usuário salvo/atualizado:", usuario);
-  };
-
-  const handleEdit = () => {
-    console.log("Editar usuário");
+    console.log("Dados do formulário:", usuario); // Depuração
+    if (userToEdit) {
+      console.log("Editando usuário:", userToEdit.id, usuario);
+      editUser(userToEdit.id, usuario);
+    } else {
+      console.log("Adicionando novo usuário:", usuario);
+      addUser(usuario);
+    }
+    navigate("/usuarios");
   };
 
   return (
@@ -166,10 +195,9 @@ const CadastroUsuario = () => {
           />
         </label>
         <div className="button-group">
-          <button type="button" onClick={handleEdit}>
-            Editar
+          <button type="submit">
+            {userToEdit ? "Salvar Edição" : "Cadastrar"}
           </button>
-          <button type="submit">Cadastrar/Salvar</button>
         </div>
       </form>
     </div>
